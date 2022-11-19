@@ -1,0 +1,115 @@
+syntax = "proto3";
+package api;
+option go_package = "grpc/driver";
+
+service UserService{
+  rpc OrderTaxi(OrderRequest) returns (OrderResult) {}
+  rpc GetOrdersByUser(OrderRequest) returns (ListOfOrders){}
+  rpc RateLastTrip(RateTripByUserRequest) returns (RateResponse){}
+}
+
+service DriverService{
+  rpc GetAllFreeDrivers(Request) returns (AllFreeDrivers) {}
+  rpc GetAllDrivers(Request) returns (AllDrivers) {}
+  rpc RateTripByDriver(RateTripByDriverRequest) returns (Error){}
+  rpc GetAllOrdersOfDriver(DriversPhone) returns (AllOrders){}
+}
+message DriversPhone{
+  string Phone = 1;
+}
+
+
+
+enum Status{
+  Free = 0;
+  Busy = 1;
+}
+
+enum TaxiType{
+  Business = 0;
+  Comfort = 1;
+  Economy = 3;
+}
+
+message AllOrders{
+  repeated Order orders = 1;
+}
+
+message Order{
+  string Id =1;
+  string UserPhone = 2;
+  string DriverPhone = 3;
+  string From = 4;
+  string To = 5;
+  string TaxiType = 6;
+  string  Date = 7;
+  string Status = 8;
+  int32 Rating = 9;
+}
+
+message Address{
+  float Lat = 1;
+  float Lng = 2;
+}
+
+message Driver{
+  string Id = 1;
+  string Phone = 2;
+  string Email = 3;
+  string TaxiType = 4;
+  string Status = 5;
+  int32 Rating = 6;
+}
+
+message Error{
+  string message = 1;
+}
+
+message AllDrivers{
+  repeated Driver drivers = 1;
+}
+message RateTripByDriverRequest{
+  int32 Rate = 1;
+  string Phone = 2;
+}
+
+
+message Request{
+
+}
+
+message AllFreeDrivers{
+  repeated Driver drivers = 1;
+
+}
+message RateResponse{
+  string Answer = 1;
+}
+message OrderRequest{
+  User user = 1;
+  string from = 2;
+  string to = 3;
+}
+
+message ListOfOrders{
+  repeated Order orders = 1;
+}
+
+message OrderResult{
+  Order order = 1;
+}
+
+message RateTripByUserRequest{
+  int32 Rate = 1;
+  string Phone = 2;
+}
+
+message User{
+  string Id = 1;
+  string Name = 2;
+  string Phone = 3;
+  string Email = 4;
+}
+
+
+
