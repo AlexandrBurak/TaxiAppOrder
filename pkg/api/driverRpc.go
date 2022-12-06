@@ -3,8 +3,8 @@ package api
 import (
 	"context"
 
-	"github.com/zxcghoulhunter/InnoTaxi-Order/internal/service/driver"
-	pb "github.com/zxcghoulhunter/InnoTaxi-Order/pkg/grpc"
+	"github.com/AlexandrBurak/TaxiAppOrder/internal/service/driver"
+	pb "github.com/AlexandrBurak/TaxiAppOrder/pkg/grpc"
 )
 
 type DriverServer struct {

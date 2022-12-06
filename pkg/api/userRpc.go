@@ -4,9 +4,9 @@ import (
 	"context"
 	"time"
 
-	"github.com/zxcghoulhunter/InnoTaxi-Order/internal/model"
-	"github.com/zxcghoulhunter/InnoTaxi-Order/internal/service/user"
-	pb "github.com/zxcghoulhunter/InnoTaxi-Order/pkg/grpc"
+	"github.com/AlexandrBurak/TaxiAppOrder/internal/model"
+	"github.com/AlexandrBurak/TaxiAppOrder/internal/service/user"
+	pb "github.com/AlexandrBurak/TaxiAppOrder/pkg/grpc"
 )
 
 type UserServer struct {
@@ -14,7 +14,7 @@ type UserServer struct {
 	Service user.UserService
 }
 
-//TODO:тут структура с реквестом и грейсфул с каналом,реквест отправляется в отдельный сервис с беснонечным циклом и там реализуется worker pool
+// TODO:тут структура с реквестом и грейсфул с каналом,реквест отправляется в отдельный сервис с беснонечным циклом и там реализуется worker pool
 func (s *UserServer) OrderTaxi(ctx context.Context, in *pb.OrderRequest) (*pb.OrderResult, error) {
 	ctxWithTimeout, cancel := context.WithTimeout(ctx, time.Second*10)
 	defer cancel()

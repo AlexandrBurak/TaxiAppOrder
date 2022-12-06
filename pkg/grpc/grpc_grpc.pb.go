@@ -12,7 +12,7 @@ import (
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
 
-	"github.com/zxcghoulhunter/InnoTaxi-Order/pkg/api"
+	"github.com/AlexandrBurak/TaxiAppOrder/pkg/api"
 )
 
 // This is a compile-time assertion to ensure that this generated file

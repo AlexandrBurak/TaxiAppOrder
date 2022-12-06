@@ -10,12 +10,12 @@ import (
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials/insecure"
 
-	"github.com/zxcghoulhunter/InnoTaxi-Order/internal/config"
-	"github.com/zxcghoulhunter/InnoTaxi-Order/internal/repository"
-	"github.com/zxcghoulhunter/InnoTaxi-Order/internal/service/driver"
-	"github.com/zxcghoulhunter/InnoTaxi-Order/internal/service/user"
-	"github.com/zxcghoulhunter/InnoTaxi-Order/pkg/api"
-	pb "github.com/zxcghoulhunter/InnoTaxi-Order/pkg/grpc"
+	"github.com/AlexandrBurak/TaxiAppOrder/internal/config"
+	"github.com/AlexandrBurak/TaxiAppOrder/internal/repository"
+	"github.com/AlexandrBurak/TaxiAppOrder/internal/service/driver"
+	"github.com/AlexandrBurak/TaxiAppOrder/internal/service/user"
+	"github.com/AlexandrBurak/TaxiAppOrder/pkg/api"
+	pb "github.com/AlexandrBurak/TaxiAppOrder/pkg/grpc"
 )
 
 func main() {

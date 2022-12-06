@@ -3,8 +3,8 @@ package repository
 import (
 	"context"
 
-	"github.com/zxcghoulhunter/InnoTaxi-Order/internal/config"
-	"github.com/zxcghoulhunter/InnoTaxi-Order/internal/model"
+	"github.com/AlexandrBurak/TaxiAppOrder/internal/config"
+	"github.com/AlexandrBurak/TaxiAppOrder/internal/model"
 )
 
 type Repository struct {

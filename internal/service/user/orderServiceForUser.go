@@ -3,9 +3,9 @@ package user
 import (
 	"context"
 
-	"github.com/zxcghoulhunter/InnoTaxi-Order/internal/model"
-	"github.com/zxcghoulhunter/InnoTaxi-Order/internal/repository"
-	pb "github.com/zxcghoulhunter/InnoTaxi-Order/pkg/grpc"
+	"github.com/AlexandrBurak/TaxiAppOrder/internal/model"
+	"github.com/AlexandrBurak/TaxiAppOrder/internal/repository"
+	pb "github.com/AlexandrBurak/TaxiAppOrder/pkg/grpc"
 )
 
 type (
@@ -32,8 +32,6 @@ func (s *UserService) GetDriver(ctx context.Context) (model.Driver, error) {
 	}
 
 	driversChan := make(chan *pb.Driver, 100)
-	errorsChan := make(chan error, 100)
-	resultChan := make(chan pb.Driver, 1)
 	for _, r := range drivers.Drivers {
 		driversChan <- r
 	}

@@ -3,8 +3,8 @@ package driver
 import (
 	"context"
 
-	"github.com/zxcghoulhunter/InnoTaxi-Order/internal/model"
-	pb "github.com/zxcghoulhunter/InnoTaxi-Order/pkg/grpc"
+	"github.com/AlexandrBurak/TaxiAppOrder/internal/model"
+	pb "github.com/AlexandrBurak/TaxiAppOrder/pkg/grpc"
 )
 
 type RepositoryDriver interface {
